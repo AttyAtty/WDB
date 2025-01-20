@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Demo</title>
+</head>
+<body>
+    <!-- form要素はインプットボックスとかチェックボックスとかを入れることができるいれものみたいなもの -->
+    <h1>Form Demo</h1>
+    <!-- action属性は「どこのサーバー」にフォームの情報を送信するかを指定する． -->
+    <!-- formはHTTPのリクエストをなげることができる -->
+    <form action="/shabi">
+        <!-- input要素だけで多種多様なフォームコントロールができる．22種類くらいある -->
+        <!-- labelはformのラベルplaceholdermがなくなった時に何の入力欄かわかるように．spanでも書けるけど，labelでやると，idを指定していれば，labelのテキストを押してもformの欄が反応するのでよく使う -->
+        <!-- nameをつけることで各formで書いた，サーバーに送る情報にそれぞれ名前をつけれる．ボタンを押して送信すると以下の行のようなURLが得られ，ちゃんと名前がついていることがわかる -->
+        <!-- file://wsl.localhost/shabi?username=sfa&password=fhjfghd&color=%23732121&num=52342 -->
+        <p>
+            <label for="username">ユーザー名：</label>
+            <input id="username" type="text" placeholder="ユーザー名" name="username"> <!-- idはひとつのファイルで一意的である必要がある -->
+        </p>
+        <p>
+            <label for="password">パスワード：</label>
+            <input id="password" type="password" placeholder="パスワード" name="password">
+        </p>
+        <p>
+            <label for="color">好きな色：</label>
+            <input id="color" type="color" name="color">
+        </p>
+        <p>
+            <!-- 以下のようにラベルを作ることもできる．でも上の書き方の方がよく使う．下のやつだと，必ずラベルトフォームが隣り合わせになってしまう -->
+            <label for="number">好きな数字：
+                <input id="number" type="number" placeholder="数字を入力" name="num">
+            </label>
+        </p>
+        <!-- placeholderは何も入力していないときにデフォで入力欄に入っている文字． -->
+        <!-- 他にもradioとかrangeをよく使う -->
+
+        <!-- buttonはcssで変幻自在にデザインは変えれる -->
+        <!-- buttonにもtypeはあって，buttonだと，押しても何も起こらないボタン．基本的にsubmitを入れる．submitだとボタンを押すとactionで入力した/shabiに必ず飛ぶ．shabiにformを送信している -->
+        <!-- formの外でbuttonを定義すると，typeはbuttonになり，中だとsubmitになる． -->
+        <button type="submit">送信</button>
+        <!-- 下のようにも書くことができる．デフォルトで送信がボタンのテキストとして入る -->
+        <input type="submit" value="送信2">
+    </form>
+    <!-- method属性はフォームを送信する際にブラウザーが使用するHTTPメソッドを指定する -->
+    <!-- methodはgetとpostを指定できる -->
+
+    <hr><!--水平線 -->
+
+    <!-- formのactonをgoogleとかYoutubeとかにしてみたとき，そこに飛ぶよっていう実験 -->
+    <!-- ただ，inputのnameと送信先のURLにあるnameは同一である必要がある -->
+    <!-- ボタンを押さなくてもEnter押せばデフォルトで送信先に飛ぶようになっている -->
+    <h2>ハイジャック検索</h2>
+    <h3>Google検索</h3>
+    <form action="https://www.google.com/search">
+        <input type="text" name="q">
+        <button>Google検索</button>
+    </form>
+    <h3>youtube検索</h3>
+    <form action="https://www.youtube.com/results">
+        <input type="text" name="search_query">
+        <button>youtube検索</button>
+    </form>
+
+
+
+</body>
+</html>
