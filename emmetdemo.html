@@ -1,0 +1,46 @@
+<!-- Emmetのよく使うやつ.ショートカットみたいな -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- main>ul>liのように書くと以下のような入れ子構造を作ってくれる．nestするともいう -->
+    <main>
+        <ul>
+            <li></li>
+        </ul>
+    </main>
+
+    <!-- div+p+bqのように書くと以下のようにタブを並列してくれる．Siblingという． -->
+    <div></div>
+    <p></p>
+    <blockquote></blockquote>
+
+    
+    <!--Multiplicationを使ってul>li*5のように書くと複数の同じタブを一気に書ける． listを作るときに<li></li>を五回書いて改行とかはめんどいからね． -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <!-- Climb-upと言って^を使ってdiv+div>ul>li^pのように書くと，pは最後に書いてはあるけど，入れ子の1つ上に戻れる．あんまり使うことは無い． -->
+    <div></div>
+    <div>
+        <ul>
+            <li></li>
+        </ul>
+        <p></p>
+    </div>
+
+    <!-- TextとかItem numberingとかもあるけどそんなつかわない．まあ，使いそうになったら調べろ -->
+
+</body>
+</html>

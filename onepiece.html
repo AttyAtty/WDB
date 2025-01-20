@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ワンピースキャラ一覧</title>
+</head>
+<body>
+    <!-- 表要素．表形式のデータ，つまり，行と列の組合せによるセルに含まれたデータによる二次元の表で表現される情報 -->
+    <table></table>
+    <!-- tdはtable dataの略で表でデータを包含するセルを定義する．表モデルに関与する -->
+    <td></td>
+    <!-- trはtable rowの略で，表内でセルの行を定義する．表のセルはtdおよびth要素を混在させることができる．trの中にtdやthが入りがち -->
+    <tr></tr>
+    <!-- thは表のセルのグループ用のヘッダーであるセルを定義する．このグループの性質はscope属性と header属性で定義する． -->
+    <th></th>
+    <!-- thead,tbody,tfootは表の一連の行(tr要素)を内包して，その部分が表の本体部分を構成することを表す． Cssを行うことで影響が出てくる-->
+    <thead></thead>  <tbody></tbody> <tfoot></tfoot>
+
+
+    
+    
+    
+    
+    <h1>ワンピースキャラ一覧</h1>
+
+    <table>
+        <thead> 
+            <tr>
+                <th>キャラ名</th>
+                <th>悪魔の実</th>
+                <th>出身</th>
+                <th>所属</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>モンキー・D・ルフィ</td>
+            <td>ゴムゴムの実</td>
+            <td>フーシャ村</td>
+            <td>麦わらの一味</td>
+        </tr>
+
+        <tr>
+            <td>ロロノア・ゾロ</td>
+            <td>能力者ではない</td>
+            <td>シェルズタウン</td>
+            <td>麦わらの一味</td>
+        </tr>
+        <tr>
+            <td>ドンキホーテ・ドフラミンゴ</td>
+            <td>イトイトの実</td>
+            <td>マリージョア</td>
+            <td>ドンキホーテファミリー</td>
+        </tr>
+        <tr>
+            <td>トラファルガー・D・ワーテル・ロー</td>
+            <td>オペオペの実</td>
+            <td>北の海 フレバンス</td>
+            <td>ハートの海賊団</td>
+        </tr>
+    </tbody>
+        
+    </table>
+
+
+    <h2>V2</h2>
+
+    <table>
+        <thead> 
+            <tr>
+                <th rowspan="2">キャラ名</th>
+                <th rowspan="2">悪魔の実</th>
+                <!-- rowspanによって表の項目で二列分使う項目の調整ができる．縦にまとめる -->
+                <th colspan="2">出身</th>
+                <!-- colspanによって表の項目で二つの要素をまとめた項目として，二行まとめて一つの項目をつける時とかにいるやつ．横にまとめる．                 -->
+            </tr>
+
+            <tr>
+                <th>海</th>
+                <th>島</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>モンキー・D・ルフィ</td>
+            <td>ゴムゴムの実</td>
+            <td>東の海</td>
+            <td>フーシャ村</td>
+        </tr>
+
+        <tr>
+            <td>ロロノア・ゾロ</td>
+            <td>能力者ではない</td>
+            <td>東の海</td>
+            <td>シェルズタウン</td>
+        </tr>
+        <tr>
+            <td>ドンキホーテ・ドフラミンゴ</td>
+            <td>イトイトの実</td>
+            <td>赤い土の大陸</td>
+            <td>マリージョア</td>
+        </tr>
+        <tr>
+            <td>トラファルガー・D・ワーテル・ロー</td>
+            <td>オペオペの実</td>
+            <td>北の海</td>
+            <td>フレバンス</td>
+        </tr>
+    </tbody>
+        
+    </table>
+    
+</body>
+</html>
