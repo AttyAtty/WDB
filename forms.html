@@ -30,8 +30,9 @@
         </p>
         <p>
             <!-- 以下のようにラベルを作ることもできる．でも上の書き方の方がよく使う．下のやつだと，必ずラベルトフォームが隣り合わせになってしまう -->
+            <!-- numberも範囲をminとmaxで指定することができる．stepも使える -->
             <label for="number">好きな数字：
-                <input id="number" type="number" placeholder="数字を入力" name="num">
+                <input id="number" type="number" placeholder="数字を入力" name="num" min="1" max="100">
             </label>
         </p>
         <!-- placeholderは何も入力していないときにデフォで入力欄に入っている文字． -->
@@ -64,7 +65,59 @@
         <button>youtube検索</button>
     </form>
 
+    <h2>続input</h2>
+    <form action="/birds">
+        <p>
+            <input type="checkbox"  id="agree" name="agree_tos" >
+        <!--<input type="checkbox"  id="agree" name="agree_tos" checked> checkedの属性を入れていると，デフォルトでチェックがついている状態になる -->
+            <label for="agree">利用規約に同意します</label>
+        </p>
+        <!-- チェックをつけて送信をすると，飛んだ先のURLがfile://wsl.localhost/birds?agree_tos=on となっていて，チェックボックスにチェックを入れることができていることがわかる．チェックがついていないと何も表示されない．-->
+        
+        <!-- radioボタンとcheckboxのちがいは，checkboxは複数選択可能なのに対して，radioはグループの中で一つしか選択できない -->
+        <!-- inpまで入力してtabを押すと，nameとidの属性込みでinput要素を書いてくれる．そういうエメット -->
+        <p>
+            <label for="xs">XS:</label>
+            <input type="radio" name="size" id="xs" value="xs">
+            <label for="s">S:</label>
+            <input type="radio" name="size" id="s" value="s">
+            <label for="m">M:</label>
+            <input type="radio" name="size" id="m" value="m">
+            <!-- radioボタンのnameを同一にすることでボタンをグループ化し，一つのグループ内で一つしか選択できないようにしている -->
+            <!-- checkboxやradioボタンは送信したときにonしか返さないが，それだとsize=onでどのサイズが押されたかわからない．のでvalue属性を書くことによって,送信されたときにsizeに代入する値テキストを決めている． -->
+        </p>
 
+        <p>
+            <!-- 選択肢がある系のやつ．selectのなかにoptionを書く感じの構成 -->
+            <!-- valueの中に入っているものがフォームが送信する値となる.タグの間に書いたのが選択肢として表示されるもの -->
+            <!-- checkboxのcheckedのようにoptionのどれかにselectedの属性をつけると，初期値としてその選択肢が選択されている状態になる -->
+            <label for="meal">食事を選択してください</label>
+            <select name="meal" id="meal">
+                <option value="fish">焼き魚</option>
+                <option value="salad">サラダ</option>
+                <option value="steak">ステーキ</option>
+                <option value="none" selected>--</option>
+            </select>
+        </p>
+
+        <!-- rangeの範囲も指定できる．minとmaxで -->
+        <!-- 送信するとURLにcheese_level=7というような感じで出力される -->
+        <!-- どのくらいの単位でrangeのコマを移動させるかをstepで指定できる.valueで初期値を指定できる -->
+        <p>
+            <label for="cheese">チーズの量</label>
+            <input type="range" name="cheese_level" id="cheese" min="0" max="100" step="20" value="40">
+        </p>
+
+        <!-- テキストを複数行書くための入力欄と思ってもらっていい．inputタグのtypeのなかに入らないことに注意 -->
+        <!-- rowsで表示するtextareaの高さ(行数)，colsで幅(文字数)を設定できる．colsを超えると勝手に次の行に移行するし，rowsを超えると映ってないだけで勝手にその下の行に書き始める -->
+        <p>
+            <label for="comments">その他コメント</label>
+            <br><!--brは改行という意味-->
+            <textarea name="" id="comments" cols="30" rows="10" placeholder="コメントを入力してください"></textarea>
+        </p>
+
+        <button>送信</button>
+    </form>
 
 </body>
 </html>
