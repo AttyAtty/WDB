@@ -1,0 +1,11 @@
+/* cssはCascading Style Sheetsの略 */
+
+/* CSSの構造のルールとしては
+selector {
+    property: value;
+}
+の形がベースにある */
+
+/* htmlに直接style要素を書いてＣＳＳのようにできるが，一つ一つのタグ，一つ一つのhtmlファイルに書いていくのは面倒なので，同じデザインを簡単に共有するために，cssファイルがある */
+
+/* cssファイルはhtmlのheadファイルにlinkタグを用いて指定することでよみこむことができる */

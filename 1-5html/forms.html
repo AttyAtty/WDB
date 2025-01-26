@@ -119,5 +119,34 @@
         <button>送信</button>
     </form>
 
+    <h2>バリデーション Demo</h2>
+    <!-- バリデーションとは，パスワードとかを入力したときに出てくる赤字での条件的なやつ．必須の条件 -->
+    <!-- 以下のようにrequired属性を書いた状態だと，何も入力しないで送信ボタンを押すと，「！このフィールドに入力してください」ってバリデーションメッセージが表示されるが，表示されるのはあくまでブラウザが親切に表示してくれているだけ -->
+    <form action="/dummy">
+        <label for="first">名前：</label>
+        <input type="text" name="first" id="first" required>
+
+    <!-- mnlengthを入れると「○○文字以上入力してください」みたいな文が出る． -->
+    <!-- maxlengthはそもそも決めた上限以上に入力不可能 -->
+        <p>
+            <label for="username">ユーザー名：</label>
+            <input type="text" name="usename" id="usename" required minlength="5" maxlength="20" required>
+        </p>
+
+    <!-- ここではtype="email"を入れているので，そのままだとメールアドレスの形式になっていないかどうかバリデーションされる.@がなかったら入れロッテ言われる -->
+        <p>
+            <label for="email">メールアドレス：</label>
+            <input type="email" name="email" id="email" required>
+        </p>
+
+    <!-- url版.本当にそのurlがあるかはさておき，urlの形になっているかを判定している -->
+        <p>
+            <label for="url">URL：</label>
+            <input type="url" name="url" id="url" required>
+        </p>
+        <button>送信</button>
+    </form>
+    <!-- 他にもpatternで入力した内容によって行うバリデーションが変わる属性もある．正規表現を用いる -->
+
 </body>
 </html>

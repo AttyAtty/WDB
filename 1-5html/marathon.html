@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マラソン申し込みフォーム</title>
+    <!-- titleはタグに表示される部分なのでお忘れなく -->
+</head>
+<body>
+    <h1>マラソン申し込みフォーム</h1>
+    <!-- actionを指定していなければ自身のページに飛ぶ -->
+    <!-- Altを押しながら，共通のテキストを入力したい場所を選ぶと，そこに一気に入力できる．行を飛んでてもいい -->
+    <form action="">
+        <div>
+            <label for="familyname">姓:</label>
+            <input type="text" name="familyname" id="familyname" required>
+            <label for="firstname">名:</label>
+            <input type="text" name="firstname" id="firstname" required>
+        </div>
+        <p>
+            <label for="">参加するマラソンを選択:</label>
+        </p>
+        <!-- 下のやつをdivじゃなくてpにすると，各radioの間に改行が入ってしまい，radioフォームのまとまりがなくなって感じる．divでぎゅうぎゅうに詰め込むイメージ -->
+            <div>
+                <!-- input:radioというエメットがあって，textとデフォで入る部分にradioを入力してタグ作ること可能 -->
+                <input type="radio" name="marathon" id="five" value="five">
+                <label for="five">楽しく走ろう5km</label>
+            </div>
+            <div>
+                <input type="radio" name="marathon" id="half" value="half">
+                <label for="half">ハーフマラソン</label>
+            </div>
+            <div>
+                <input type="radio" name="marathon" id="full" value="full">
+                <label for="full">フルマラソン</label>
+            </div>
+
+        <div>
+            <label for="mail">メールアドレス</label>
+            <input type="email" name="mail" id="mail" required>
+
+            <label for="password">パスワード</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div>
+            <label for="age">参加する年代</label>
+            <select name="age" id="age">
+                <option value="-18">-18</option>
+                <option value="18-30">18-30</option>
+                <option value="30-50">30-50</option>
+                <option value="50-">50-</option>
+            </select>
+        </div>
+        <button>登録する</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* CSSの構造のルール
+    selector {
+        property: value;       CSSにとって最後のセミコロンは命．忘れてはいけない
+    }
+ */
+
+h2 {
+    color: teal;
+    background-color: plum;/* h2タグ全域を塗る */
+}
+
+button {
+    color: magenta;/* ボタンの文字の色が変わった */
+    background-color: #47f247;/* ボタンの背景の色が変わった */
+}
+
+p {
+    color: rgb(36, 36, 235);
+    background: rgb(255, 113, 234);/* background単体ではいろいろできる */
+}
+
+body {
+    background-color: #C5E;/*#CC55EEと同義．同じ文字の連続は省略できる．その色の中で・そんな使わない*/
+}
