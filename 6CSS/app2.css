@@ -1,0 +1,26 @@
+h1 {
+    background-color: aqua;
+    text-align: center;/*テキストの位置を決めている*/
+    font-weight: 400;/*文字の太さ．Boldに値する*/
+    text-decoration: red underline wavy;/*下線，上線などいろいろできる．色や線の種類も直接指定できる*/
+    letter-spacing: 5px;/*一文字ごとの間隔*/
+    font-size: 50px;/*pxは絶対単位． fontの単位の種類は多い */
+    font-family: Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, Furuta; /*fontの指定右に行くほど優先順位が下．WindowsとかMacによってあるフォントとないフォントがある*/
+    /* font-famlyで相称ファミリーを1番後ろで書いた場合(san-serifとか)，そのfont-familyからランダムで一つフォントが利用される．ブラウザ依存．総称ファミリーだけでもOK */
+}
+
+a {
+    color: blue;
+    text-decoration: none;/*リンクの下線を消す*/
+    transition: color 0.5s;/*リンクの色を変化させる*/
+}
+
+h2 {
+    color: #000000;
+}
+
+p {
+    color: #000000;
+    line-height: 2;/*行間1行の高さ*/
+}
+
