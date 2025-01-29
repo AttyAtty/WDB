@@ -2,6 +2,8 @@
     background-color: cyan;
 }*/
 
+/*cssでは定義が後に書かれた方が採用される*/
+
 body {
     background-color: #f1faee;
 }
@@ -15,22 +17,22 @@ h1, h2 {/*セレクターリスト．左側に書いた要素全てに対して�
     color: #1d3557;
 }
 
-#signup {
+#signup {/* "#+ID" で指定したIDを持つものについていじる．htmlにおいてidは一意的でないといけない．*/
     color: #f1faee;
     background-color: #1d3557;
 }
 
-span {
+span {/*なんかグループ化するためのものと思ってもらっていい．htmlでspanで囲ったものは一気にCSSで加工できる．*/
     color: #457b9d;
 }
 
-.tag {
+.tag {/*指定した特定のクラスを編集．クラスセレクターは" . + class名 " で書く*/
     background-color: #e63946;
     color: #f1faee;
     font-size: 16px;
 }
 
-.post a {
+.post a {/*子孫セレクター．これだと，postクラスのなかでのa要素に対してcssを反映させるということ．post自体には何も適応されない*/
     color: #457b9d;
     text-decoration: none;
     font-weight: 700;
@@ -40,15 +42,15 @@ footer a {
     color: #e63946;
 }
 
-h2 + button {
+h2 + button {/*隣接セレクター：同じ親要素の子同士でh2タグの直後のbuttonを選択するということ．p全部ではない*/
     font-size: 20px;
 }
 
-footer > a {
+footer > a {/*直下セレクター．footerの1つ内部にあるタグに対する操作を行うということ．いくつもネストしている者には関与しない．一つ下のみ*/
     color: #457b9d;
 }
 
-input[type="password"] {
+input[type="password"] {/*属性セレクター．type属性がtextのinputをすべて選択．[]の中にtypeとかclassとか結構つかえるもの*/
     color: greenyellow;
 }
 
@@ -56,18 +58,21 @@ a[href*="google"] {
     color: magenta;
 }
 
-.post a:hover {
+.post a:hover {/*擬似クラス．セレクターに負荷するキーワードであり，選択された要素に対して特定の状態を指定する．:から始まる*/
+    /* :hoverは，カーソルをそのhoverの左に書いたタグの部分の上に持っていくと，以下に書いたものを表示する（下線が表示される） */
     text-decoration: underline;
 }
 
-.post button:active {
+.post button:active {/*クラスセレクター＋子孫セレクタ―＋擬似クラス*/
+    /* ボタンをクリックするとボタンの背景が水色になる */
     background-color: aqua;
 }
 
-.post:nth-of-type(2n) {
+.post:nth-of-type(2n) {/*2列ごとに背景の色を変えるみたいな感じ*/
     background-color: #c9d5c5;
 }
-
+/* 擬似クラスは要素の状態を指定できたのにたいして，擬似要素は要素の場所を指定する */
+/* セミコロンの数は擬似クラスが1つ，擬似要素が2つだが，どっちも1つでも2つでもコンパイル時は問題ない */
 h2:first-letter {
     font-size: 50px;
 }
@@ -76,7 +81,7 @@ p::first-line {
     color: purple;
 }
 
-::selection {
+::selection {/*ハイライトしたときの設定．ハイライト＝カーソルでクリックしながら範囲選択するあれ*/
     background-color: sandybrown;
 }
 
@@ -85,6 +90,10 @@ p::first-line {
     color: #f1faee;
 }
 
+/* 詳細度：どのcssプロパティが要素に最も関係があるか，適応されるかをブラウザーが決定する手段．複数のスタイルが競合した場合，よりその要素と関係があるセレクターを持つスタイルが勝つ． */
+/* [1]IDセレクター > [2]クラス,属性，擬似クラス，セレクター > [3]要素型，擬似要素，セレクター のような優先度になっている*/
+/* 上のボタンの方が下のボタンのやつより詳細度は高い．競合している要素のみこの現象が起こる */
+/* 詳細度めっちゃ大事 */
 button:hover {
     background-color: olive;
 }

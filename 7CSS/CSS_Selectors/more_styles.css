@@ -1,3 +1,4 @@
+/* app.cssより後に呼ばれているのでh1,h2に対してはこっちのcssが適応される */
 h1, h2 {
     color: olivedrab;
 }
