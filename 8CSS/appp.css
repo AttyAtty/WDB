@@ -1,0 +1,30 @@
+h1 {/*h系はプロックなので画面いっぱいに幅を占有している*/
+    background-color: aquamarine;
+    border: 2px solid #258728;
+    width: 200px;
+    height: 100px;
+    padding: 50px;
+    margin: 50px;
+    /* display: inline;インライン要素のような位置づけをする */
+    /* ブロック要素は全て全方向に作用する */
+}
+
+span {/*spanはインライン要素なのでテキストの表示のために最低限必要な長さしか確保しない．*/
+    background-color: beige;
+    border: 3px solid #983498;
+    width: 100px;
+    padding: 50px;
+    /* display: block;ブロック要素のような位置づけをする．上のテキストは隠してしまい，下のテキストはspanの上に乗って書かれる */
+    /* インライン要素のmergin paddingなどは水平方向にしか作用しない．widthやheghtは作用するけど．面白い見た目になる． */
+}
+
+div {
+    margin-bottom: 30px;
+    background-color: blueviolet;
+    border: 5px solid #415680;
+    width: 100px;
+    height: 100px;
+    /* display: inline;nline要素にするとwidthとheightを無視するので，三つのdivが重なり，borderだけがぎゅうぎゅうに表示される．ー＞ここでinline-blockの出番 */
+    display: inline-block;/*spanみたいにはなるが，width heightも満たしたまま横に連なるみたいな感じ*/
+    margin: 10px;
+}

@@ -1,0 +1,58 @@
+/* このように表示範囲をいじっても変わるのはcontentの部分だけ．ちゃんとdivの領域とかはmerginとして残っている． */
+
+/* borderの使い方をしるだけで結構サイトを良い感じにデザインすることができる */
+/* ここではborder-width border-color border-style を使ってみる．この三つはどれかが欠けたら線は表示されない */
+/* border-sizing: border-box; はborderの太さのpx込みで上のwidthとかheightを考慮するということ．*/
+
+/* paddingはborderとcontentの間の空間についての設定 */
+/* paddingのサイズの書き方は４通りある．(1)4辺一括 (2)上下|左右 (3)上|左右|下(あんま使わん) (4)上|右|下|左(時計回り) */
+
+/* merginはborderの外側．各要素毎の間隔とかを決める感じ */
+/* bodyやhにはデフォでmerginが設定されている．cssの最初にその部分をmergin: 0px;とかに調整することによって謎の隙間を失くしたりしている */
+
+/* displayプロパティは色々できる親切なプロパティ．ここではInline Block Inline-Block を使っていく */
+
+div {
+    width: 400px;
+    height: 400px;/* 指定した範囲全体をぜいたくに使う．余分にあれば空白を途中に適切に入れたりを勝手にする． */
+    background-color: rgb(196, 146, 244);
+}
+
+h1 {
+    background-color: aqua;
+    padding-left: 30px;
+    padding-top: 60px;
+    border: 1px solid #0a9396;
+    width: 300px;
+    /* デフォでmerginがある */
+}
+
+
+#one {
+    background-color: #ffc8dd;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    box-sizing: border-box;
+    padding: 5px 20px 10px 40px;
+}
+
+#two {
+    background-color: #bde0fe;
+    border-width: 3px;
+    border-color: #d62828;
+    border-style: dashed;/*点線*/
+    border-left-width: 7px; /*上下左右別々に設定可能*/
+}
+
+/* borderで一気にwidth color styleを指定できる．順番は関係ない．その中で変えたい部分があれば，borderで宣言した後に宣言すれば反れば採用される． */
+#three {
+    background-color: #ecf39e;
+    border: 5px solid #03a292;
+    border-radius: 40%; /*角の丸み. pxか%で指定 50%で円とかね*/
+}
+
+span {
+    margin-left: 30px;
+    margin-top: 30px; /*変わらない*/
+}
