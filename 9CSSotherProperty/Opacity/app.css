@@ -1,0 +1,19 @@
+section {
+    width: 500px;
+    height: 500px;
+    background-color: blueviolet;
+}
+
+#rgba {
+    width: 50%;
+    height: 50%;
+    background-color: rgba(255, 255, 255, 0.5);/*4つめのa = alpha = 不透明度(0から1).あくまで背景が透けてるだけ．文字の透明度とかは何一つ変わっていない*/
+    /* rgbaは16進数でも書ける．あんま使わんけど00からffまでで*/
+}
+
+#Opacity {
+    width: 50%;
+    height: 50%;
+    background-color:yellow;
+    opacity: 0.5;/*opacityはその要素の内部のもの全体の不透明度を調整する*/
+}
