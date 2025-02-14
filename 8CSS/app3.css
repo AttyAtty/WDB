@@ -1,0 +1,84 @@
+#percent {
+    background-color: aqua;
+    width: 400px;
+    height: 800px;
+}
+
+#percent div {
+    background-color: brown;
+    width: 70%;  /*親(divはsectionの一つ下にある)から見た%*/
+    height: 20%; /* %でも大きさを調整可能*/
+}
+
+#em h1 {
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;  /*font-sizeから見た%.文字が大きくなるわけではなく，文字の領域の高さが増える．ー＞上下の空白が増える．*/
+}
+/*emは相対単位のひとつ．親要素に対してどのくらいかを記す.下の場合だと，articleを変えるだけでその子孫のサイズも変えたサイズに合わせて相対的に変わる．emで変えたとこは．*/
+
+#em h2 {
+    font-size: 2em;
+}
+
+#em h3 {
+    font-size: 1.5em;
+}
+
+#em p {
+    font-size: 1em;
+}
+
+#em {
+    font-size: 10px;
+}
+
+/*font-size以外と変えると，親に対してではなく，自身のfont-sizeに対する相対なサイズを指定することになる*/
+/*ボタンなどは数値の比は変わらないので，いちいち数値を変化させる必要がない．角の丸みとかべっこでいじらなくていい．見てのとおり親クラスが違うと，ボタンの大きさも変わる．*/
+#em button {
+    font-size: 1em;/*20px*/
+    padding: 0 1em;/*20px*/
+    border-radius: 0.5em;/*10px*/
+    background-color: green;
+    color: white;
+}
+
+#em ul {
+    font-size: 1.5em;
+}
+/*remはulとかliとかでemを使うと起きてしまう倍々現象を失くすためのもの．root emの略．ルート要素のfont-sizeを基準とした相対値．つまり一意的．<html>のfont-sizesが20pxなら，2emは必ず40pxみたいな．font-sizeが変わらない限りは．*/
+
+#rem h1 {
+    font-size: 40px;
+    border: 1px solid black;
+    line-height: 200%;  /*font-sizeから見た%.文字が大きくなるわけではなく，文字の領域の高さが増える．ー＞上下の空白が増える．*/
+}
+/*emは相対単位のひとつ．親要素に対してどのくらいかを記す.下の場合だと，articleを変えるだけでその子孫のサイズも変えたサイズに合わせて相対的に変わる．emで変えたとこは．*/
+
+#rem h2 {
+    font-size: 2rem;/*htmlのfont-sizeに対して２倍になっている．*/
+}
+
+#rem h3 {
+    font-size: 1.5rem;
+}
+
+#rem p {
+    font-size: 1rem;
+}
+
+#rem {
+    font-size: 10px;
+}
+
+#rem button {
+    font-size: 1em;/*20px*/
+    padding: 0 1em;/*20px*/
+    border-radius: 0.5em;/*10px*/
+    background-color: green;
+    color: white;
+}
+
+#rem ul {/*倍々現象が起こらない*/
+    font-size: 1.5rem;
+}
