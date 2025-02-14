@@ -1,0 +1,43 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #3d405b;
+    border: 2px solid black;
+    margin: 10px;
+    display: inline-block;
+}
+
+
+.middle {
+    background-color: #81b29a;
+}
+
+#static .middle { /*デフォルトで決まっている位置．位置は変更できない*/
+    position: static;
+    top: 100px;
+}
+
+#relative .middle {
+    position: relative;/*top bottom left rightで位置変更可能*/
+    top: 50px;/*上に50px分の空間を作る認識*/
+    left: 50px;/*左に50px分の空間を作る認識*/
+    /*div自体の位置は変わっていなくて，表示される新しい空間を儲けてどうすることになってる感じ．他の要素の位置関係に影響はない*/
+}
+
+#absolute { /*sectionに対するposition設定*/
+    position: relative;
+}
+
+#absolute .middle {/*absoluteは祖先の要素に依存して配置が決まる．祖先の配置が決まっていなければ，またその祖先という感じで，最終的にbodyにたどり着く*/
+    position: absolute; /*absoluteにした分の空間は無くなる．ー＞次の要素が重なる．*/
+    top: 1px;
+    left: 1px;
+}
+
+#fixed .middle {/*見えている画面上から位置が全く変わらない．スクロールしても変わらない*/
+    position: fixed;/*absolute同様，fixedにした分の空間は無くなるし祖先の位置に従う．ー＞次の要素が重なる．*/
+    top: 0;
+    left: 0;
+}
+/*stickyというものもある．スクロールによってfixedだったりabsoluteになったりする凄いやつ*/
+/*ウィンドウの中ではabsoluteみたいに動くが，スクロールによってウィンドウからでそうになると，fixedのようにウィンドウの端に引っ付き続ける．*/
