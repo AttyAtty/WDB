@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  display: flex;
+  display: flex;/*まだ習っていない*/
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -8,18 +8,18 @@ body {
 }
 
 button {
-  background: none;
-  color: #ffa260;
-  border: 2px solid;
-  padding: 1em 2em;
+  background: none;/*buttonのデフォの背景がなくなる*/
+  color: #ffa260; /*何の色かは書いていないので，色を持つものは全てこの色になる*/
+  border: 2px solid;/*枠線は実線*/
+  padding: 1em 2em;/*borderとcontentの間の空間の調節*/
   font-size: 1em;
-  transition: border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;
+  transition: border-color 0.25s, color 0.25s, box-shadow 0.25s, transform 0.25s;/*指定した時間をかけてhoverの部分で指定した状態に変化する．allを使うのはあんま良くない*/
 }
 
 button:hover {
   border-color: #f1ff5c;
   color: white;
-  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
-  transform: translateY(-0.25em);
-  cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;/*影をつけるプロパティ*/
+  transform: translateY(-0.25em);/*y座標の方向に移動*/
+  cursor: pointer;/*カーソルが変わる．ボタン上にカーソルを持っていくと，手で押そうとしているみたいなUIになる*/
 }

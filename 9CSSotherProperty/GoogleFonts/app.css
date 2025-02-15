@@ -1,4 +1,5 @@
 body {
+    /* フォントの指定をしている．先にある方の優先度高い．対応してなかったらつぎのやつって感じ */
     font-family: 'Noto Sans JP', sans-serif;
 }
 

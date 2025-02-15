@@ -6,10 +6,16 @@ h1 {
     width: 300px;
     font-size: 1.8em;
     text-align:center;
-    margin: 20px auto;
+    margin: 20px auto;/*autoによって自動で左右の空白を考えて，親クラスの真ん中に配置されるようになっている．*/
     font-family: Courier New;
     font-weight: lighter;
 }
+
+/*transformの種類はめちゃめちゃある*/
+
+/*first-of-typeはその要素が複数あったとき，一番最初のやつを意味する．*/
+/*nth-of-type(2n)はその要素が複数あったとき，２個ずつ飛ばした対称に書いた命令を施すことを意味する．*/
+/*後に書いた方が優先順位が先なので，きれいに４つずつ分かれているように見える．*/
 
 h1:nth-of-type(2n) {
     background-color: #e9c46a;
@@ -21,23 +27,28 @@ h1:nth-of-type(4n) {
     background-color: #e76f51;
 }
 
-section:first-of-type h1:nth-of-type(1) {
-    /* transform-origin: top right; */
+/*それぞれXYZ軸に対しての操作がある．rotateX,scaleYみたいな*/
+
+section:first-of-type h1:nth-of-type(1) {/*一つ目のsectionの一つ目のh1*/
+    /* transform-origin: top right; これによってどの点を軸，支点として回転をするのかを決めることができる．*/
     transform: rotate(45deg);
 }
 
+/*scaleは要素の大きさの拡大縮小をつかさどる．*/
 section:first-of-type h1:nth-of-type(2) {
     transform: scale(0.6);
 }
 
+/*translateは要素を別の場所に移動できる*/
 section:first-of-type h1:nth-of-type(3) {
-    transform: translateX(200px);
+    transform: translateX(200px);/*右に200px*/
 }
 
 section:first-of-type h1:nth-of-type(4) {
-    transform: translate(-200px, 50px);
+    transform: translate(-200px, 50px);/*translate(x,y)*/
 }
 
+/*skewは歪め．正方形が平行四辺形みたいになるみたいな感覚*/
 section:nth-of-type(2) h1:nth-of-type(1) {
     transform: skew(30deg);
 }
@@ -46,6 +57,7 @@ section:nth-of-type(2) h1:nth-of-type(2) {
     transform: skew(10deg, 5deg);
 }
 
+/*組み合わせることもできる*/
 section:nth-of-type(2) h1:nth-of-type(3) {
     transform: rotate(20deg) scale(1.3);
 }
@@ -54,6 +66,9 @@ section:nth-of-type(2) h1:nth-of-type(4) {
     transform: translateX(-500px) rotate(0.5turn) scaleY(1.5);
 }
 
+/*二つ目のセクション内部の全てのコンテンツに対して*/
 section:nth-of-type(2) {
     transform: scale(0.7) translateX(300px);
 }
+
+/*3dでのtransformがある*/

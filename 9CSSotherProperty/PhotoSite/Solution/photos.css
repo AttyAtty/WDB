@@ -1,14 +1,17 @@
 img {
-    width: 30%;
-    margin: calc(10%/6);
+    width: 30%;/*%で書くことで，ウィンドウのサイズが変わっても，そのサイズに対して同じ割合を保つようにサイズが拡大縮小する*/
+    margin: calc(10%/6);/*flexboxを知るとこのmaiginの10%の分配もかなり楽にできるららしい*/
+    /* calcは数値計算の関数calculationの略.3枚の写真それぞれの左右に空白があるので，計６個のmerginができるので，10%/6となっている */
 }
 
 nav {
-    text-transform: uppercase;
-    border-bottom: 2px solid #f1f1f1;
-    width: 30%;
-    margin-left: calc(10%/6);
-    padding: 1.2em 0;
+    text-transform: uppercase; /*全部大文字に変換*/
+    border-bottom: 2px solid #f1f1f1;/*下の枠線，下線を引いた*/
+    width: 30%; /*幅調整*/
+    margin-left: calc(10%/6); /*左側だけmerginを適応．写真と配置が同じ行になるように*/
+    padding: 1.2em 0; /*borderとテキストの間の空間の調整*/
     font-family: Raleway, sans-serif;
-    font-size: 1.5em;
+    font-size: 1.5em; /*フォンサイズに％を使うのはよろしくない．*/
 }
+
+/* 上記でやったのは，名前を少しおしゃれなデザインやフォントにしたこと，そして，写真を一行に３枚，とうかんかくで　表示することである． */
