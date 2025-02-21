@@ -10,10 +10,12 @@ h1,h2 {
     /* height: 500px; */
     margin: 0 auto;
     border: 5px solid #003049;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    /* flex-wrap: wrap; */
+    display: flex; /*container(というidのついたsection)内に収まるようになる*/
+    flex-direction: row;/*主軸の方向の指定をしている．横(main axis: row)か縦(cross axis: column)か*/
+        /*row-reverseやcolumn-reverse(順番が逆になる)もある*/
+    justify-content: center;/*flex-start(上，左詰め), flex-end(順番はそのままで下，右詰め), center(真ん中配置), */
+        /*space-between(divとdivの間に軸の方向にのみ空白ができるが，左端，右端はない), space-around(divの周りに空白，左端，右端にも半分分の空白がある), space-evenly(space-aroundの左端右端の空白も同じサイズになった版)*/
+    /* flex-wrap: wrap; (交差軸の方向を決める．複数行になるときの配置．改行の方法．wrap-reverseとかnowrap(無理やり一行に詰め込む)もある．)*/
 }
 
 #container div {
@@ -23,32 +25,32 @@ h1,h2 {
     text-align: center;
     flex-basis: 500px;
 }
-
+/* 
 div:nth-of-type(1) {
     flex-grow: 1;
     flex-shrink: 3;
-}
-
+} */
+/* 
 div:nth-of-type(5) {
     flex-grow: 2;
     flex-shrink: 0;
-}
-
+} */
+/* 
 main {
     width: 80%;
     margin: 0 auto;
     border: 5px solid black;
     height: 500px;
     display: flex;
-}
+} */
 
-main .sidebar {
+/* main .sidebar {
     background-color: purple;
     flex: 1 2 300px;
     border: 2px solid black;
-}
+} */
 
-main .maincontent {
+/* main .maincontent {
     background-color: cyan;
     flex: 2 1 800px;
-}
+} */
