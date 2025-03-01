@@ -7,23 +7,43 @@ h1,h2 {
 #container {
     background-color: #003049;
     width: 90%;
-    /* height: 500px; */
+    height: 500px;
     margin: 0 auto;
     border: 5px solid #003049;
-    display: flex; /*container(というidのついたsection)内に収まるようになる*/
-    flex-direction: row;/*主軸の方向の指定をしている．横(main axis: row)か縦(cross axis: column)か*/
+    display: flex;
+        /*container(というidのついたsection)内に収まるようになる*/
+    flex-direction: row;
+        /*主軸の方向の指定をしている．横(main axis: row)か縦(cross axis: column)か*/
         /*row-reverseやcolumn-reverse(順番が逆になる)もある*/
-    justify-content: center;/*flex-start(上，左詰め), flex-end(順番はそのままで下，右詰め), center(真ん中配置), */
+    justify-content: center;
+        /*主軸にどうやって要素を配置するか．flex-start(上，左詰め), flex-end(順番はそのままで下，右詰め), center(真ん中配置), */
         /*space-between(divとdivの間に軸の方向にのみ空白ができるが，左端，右端はない), space-around(divの周りに空白，左端，右端にも半分分の空白がある), space-evenly(space-aroundの左端右端の空白も同じサイズになった版)*/
-    /* flex-wrap: wrap; (交差軸の方向を決める．複数行になるときの配置．改行の方法．wrap-reverseとかnowrap(無理やり一行に詰め込む)もある．)*/
+    flex-wrap: wrap;
+        /*(交差軸の方向を決める．複数行になるときの配置．改行の方法．wrap-reverseとかnowrap(無理やり一行に詰め込む)もある．)*/
+    align-items: flex-start ;
+        /*交差軸にどうやって配置するか．*/
+        /* 基本的にはjustify-contentと同じ．baselineは文字列のベースラインにそろえる．文字の大きさが異なるときに同じ直線上に配置するときに便利.文字のサイズが同じだと，flex-startとの違いがない． */
+    /* align-content: flex-start; */
+        /* 複数の要素があった時に，その要素同士，行間のスペースを調整する．ー＞wrapが起こってないと何も起こらない．flex-start flex-end, center, space-between(スぺ――スを最大限あける) */
 }
 
 #container div {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     /* max-width: 300px; */
     text-align: center;
-    flex-basis: 500px;
+    /* flex-basis: 500px; */
+    /* font-size: 2em; */
+}
+
+/*nth-of-type(n)の書き方で任意の要素を指定する．*/
+/*他の文はflexの入れ物に対して作用していたのに対して，これは入れ物内の1要素だけに作用する．*/
+div:nth-of-type(3){
+    align-self: flex-end;
+}
+
+div:nth-of-type(2){
+    align-self: center;
 }
 /* 
 div:nth-of-type(1) {
