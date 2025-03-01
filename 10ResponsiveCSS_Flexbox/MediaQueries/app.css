@@ -22,9 +22,14 @@ ul {
     flex: 1;
     max-width: 50%;
     display: flex;
+        /* flexの中にflexを定義している．ネスト．いいテクニック */
     justify-content: space-evenly;
 }
 
+/* 開発者ツールの表示媒体を切り替えて，どの媒体でどう見えるのかを見る機能便利 */
+/* メディアクエリ―とは，画面の解像度や端末の種類とか，縦向き，横向き，ウィンドウのサイズなどに応じてスタイルを変える手法 */
+/* Viewport: 現在見えている部分 */
+/* min-width(指定した値以上に対して行う)とmax-width(指定した値以下に対して行う)をよく使う． 組み合わせることもできる*/
 
 /* @media (min-width: 600px) and (max-width: 800px) {
     h1 {
@@ -48,18 +53,23 @@ h1 {
     }
 }
 
+/*landscapeはスマホとかiPadを横画面にしたときの見た目．その仕様*/
 /* @media(orientation: landscape) {
     body {
         background-color: magenta;
     }
 } */
 
+/* 下の値はmediaquiryを使うときによく使われる値．次のBootStrapでよくでる */
+
 @media(max-width: 768px) {
     h1 {
         font-size: 4em;
+        /* ウィンドウの大小に応じてフォントの大きさも変わる */
     }
     nav, nav ul {
         flex-direction: column;
+            /* 途中から横に並んでいたのが盾になるあれ */
         align-items: center;
     }
 }
