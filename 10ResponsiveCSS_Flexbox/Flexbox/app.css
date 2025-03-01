@@ -30,12 +30,14 @@ h1,h2 {
 #container div {
     width: 100px;
     height: 100px;
+    /* flex-basisの方が優先される．主軸のとりかたによってweightかheightかが変わるので注意 */
     /* max-width: 300px; */
     text-align: center;
     /* flex-basis: 500px; */
     /* font-size: 2em; */
 }
 
+/* ##################################################### */
 /*nth-of-type(n)の書き方で任意の要素を指定する．*/
 /*他の文はflexの入れ物に対して作用していたのに対して，これは入れ物内の1要素だけに作用する．*/
 
@@ -47,34 +49,44 @@ div:nth-of-type(2){
     align-self: center;
 } */
 
-/*
+/* ##################################################### */
+
+/* フレックスアイテムの大きさに関するプロパティ．flex-basis, flex-grow, flex-shrink */
+/* flex-basis: フレックスコンテナ内のフレックスアイテムの幅指定*/
+/* flex-grow: フレックスコンテナ内の残りの空間の内，どれだけがそのアイテムに割り当てられるかを比で設定．wrapと組み合わせるとおもろい．*/
+/* flwx-shrink: フレックスアイテムがフレックスコンテナより大きいとき，この文にしたがって縮小する．要素全体が等しく小さくなるのではなく，これが書いてある要素が優先的に縮小する．これも比*/
+
+
 div:nth-of-type(1) {
     flex-grow: 1;
     flex-shrink: 3;
-} */
+}
 
-/*
 div:nth-of-type(5) {
     flex-grow: 2;
     flex-shrink: 0;
-} */
+}
 
-/*
+/* flex:flex-basis, flex-grow, flex-shrink の省略，一括記法*/
+
 main {
     width: 80%;
     margin: 0 auto;
     border: 5px solid black;
     height: 500px;
     display: flex;
-} */
+}
 
-/* main .sidebar {
+main .sidebar {
     background-color: purple;
     flex: 1 2 300px;
+        /* grow,shrink,basisの順*/
     border: 2px solid black;
-} */
+}
 
-/* main .maincontent {
+main .maincontent {
     background-color: cyan;
-    flex: 2 1 800px;
-} */
+    flex: 2 1 400px;
+}
+
+/* maincontentの方が広がるのが速く，sidebarは縮むのが速い．速いというか，その度合が大きいというか． */
