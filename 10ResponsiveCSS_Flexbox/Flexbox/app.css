@@ -38,24 +38,28 @@ h1,h2 {
 
 /*nth-of-type(n)の書き方で任意の要素を指定する．*/
 /*他の文はflexの入れ物に対して作用していたのに対して，これは入れ物内の1要素だけに作用する．*/
-div:nth-of-type(3){
+
+/* div:nth-of-type(3){
     align-self: flex-end;
 }
 
 div:nth-of-type(2){
     align-self: center;
-}
-/* 
+} */
+
+/*
 div:nth-of-type(1) {
     flex-grow: 1;
     flex-shrink: 3;
 } */
-/* 
+
+/*
 div:nth-of-type(5) {
     flex-grow: 2;
     flex-shrink: 0;
 } */
-/* 
+
+/*
 main {
     width: 80%;
     margin: 0 auto;
