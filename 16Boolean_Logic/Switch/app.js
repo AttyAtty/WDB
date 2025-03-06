@@ -20,10 +20,13 @@ switch (day) {
     case 7:
         console.log('週末');
         break;
+    // 土日はどっちも週末で，冗長にしないようにこのように省略できる．breakがなければ以降のcaseも出力される．
     default:
         console.log('無効な数字です');
 }
 
+// switch文は1つのcaseにひっかかるとそれ以降が全て出力されるので，breakがある．
+// defaultはif文でのelse的な存在．
 
 // const day = 2;
 // if (day === 1) {
