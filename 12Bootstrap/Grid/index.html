@@ -13,6 +13,7 @@
     <div class="container">
         <h1 class="display-1 text-center text-primary">The Grid System</h1>
         <div class="row">
+            <!-- containerを宣言してrowを宣言するとこの中で12個(2 3 4の最小公倍数)の要素分のスペースを使うことができるようになる．-->
             <div class="col-2 bg-success">私の幅は2</div>
             <div class="col-8 bg-danger">私の幅は8</div>
             <div class="col-2 bg-success">私の幅は2</div>
@@ -22,14 +23,18 @@
             <div class="col-6 bg-danger">私の幅は6</div>
             <div class="col-3 bg-success">私の幅は3</div>
         </div>
+        <!-- containerの中にcontainerを作ると，そのコンテナ分のスペースが確保されて，少し横幅がちいさくなる -->
         <div class="row">
+            <!-- colだけを書くと，余っているスペースを自動的に割り当ててくれる -->
             <div class="col bg-primary">私の幅は自動</div>
             <div class="col bg-secondary">私の幅は自動</div>
             <div class="col-8 bg-primary">私の幅は自動</div>
         </div>
 
+        <!-- レスポンシブなグリッドシステム -->
         <h2 class="display-4">Responsive Grid</h2>
         <div class="row">
+            <!-- 画面がmdより大きかったら6にする．(２行２列になる)(それまでは12．1列4行ある).画面がxlより大きかったら3にする(１行４列になる) -->
             <div class="col-md-6 col-xl-3 bg-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
                 suscipit
                 debitis ipsam
@@ -51,6 +56,7 @@
                 accusantium possimus atque quo sed quas? Nostrum vel inventore ipsam suscipit adipisci assumenda rerum
                 exercitationem temporibus sunt repellat.</div>
         </div>
+        <!-- flexboxと同じ書き方ができる．alignは交差軸に対する操作余分な空白をなくし，divの位置を調整できる．align-items-???? -->
         <h2>Grid Alignment</h2>
         <div class="row align-items-center">
             <div class="col-3 bg-danger">
@@ -81,6 +87,8 @@
         </div>
 
         <h3>Justify Content</h3>
+        <!-- borderクラスでコンテナに枠線を書いてる．justify-contentは主軸に対する操作-->
+        <!-- mdからは真ん中に位置して，lgからは左詰め，xlからは二つのdivの間に空隙ができる仕様 -->
         <div class="row border justify-content-center justify-content-lg-start justify-content-xl-between">
             <div class="col-md-4 bg-primary">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas maxime blanditiis, vitae reiciendis,
@@ -94,8 +102,11 @@
             </div>
         </div>
 
+        <!-- 画像に対してレスポンシブにする書き方 -->
         <div class="row">
+            <!-- rowの後ろにno-guttersを書くと，画像間の空間がなくなる -->
             <div class="col-xl-4 col-md-6">
+                <!-- img-fluidにしなきゃいけない -->
                 <img class="img-fluid"
                     src="https://images.unsplash.com/photo-1589595363745-d842812a9db7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
                     alt="">

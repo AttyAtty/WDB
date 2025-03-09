@@ -11,6 +11,7 @@
 
 <body>
     <div class="container">
+        <!-- svgのタグが，bootstrapのサイトからとってきたアイコン．大きさをemで書くことで入っているクラスのサイズに対して相対的なサイズにすることができる -->
         <h1 class="display-1 text-primary">Icons <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                 fill="currentColor" class="bi bi-music-note-beamed" viewBox="0 0 16 16">
                 <path
@@ -27,8 +28,11 @@
             </svg></button>
         <div class="row">
             <div class="col-md-4">
+                <!-- アイコンをフォームと共に使うことも可能．共に使うというか隣に配置しただけだけど -->
                 <div class="input-group">
                     <div class="input-group-prepend">
+                        <!-- prependだと前の方，appendだと後ろの方に配置される． -->
+                         <!-- input-group-textの場所にアイコンをいれる．フォームに表示するテキストを書ける．見出し的な． -->
                         <span class="input-group-text"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                 fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                 <path

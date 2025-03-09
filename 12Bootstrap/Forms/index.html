@@ -13,7 +13,9 @@
     <div class="container">
         <h1 class="display-2">Forms</h1>
         <form action="#nowhere">
+            <!-- なんか書いてEnterを押してもどこにも飛ばないようにしている -->
             <div class="form-row">
+                <!-- form-groupをかくことで,margin-bottomが構成要素の一つなので，以下の要素に対して共通のmarginを与えて，統一感のあるデザインにできる -->
                 <div class="form-group col-md-6">
                     <label for="email">メールアドレス</label>
                     <input type="email" class="form-control" name="email" id="email">
@@ -25,12 +27,14 @@
             </div>
 
             <div class="form-row">
+                <!-- rowではなくform-rowにすることで，フォーム同士の間隔を狭めてくれる．無駄な感覚がなくなる -->
                 <div class="form-group col-md-3 col-6">
                     <label for="zipcode">郵便番号</label>
                     <input type="text" class="form-control" name="zipcode" id="zipcode">
                 </div>
                 <div class="form-group col-md-3 col-6">
                     <label for="pref">都道府県</label>
+                    <!-- selectは選択しを選ぶタイプのフォーム -->
                     <select class="form-control" name="pref" id="pref">
                         <option value="1">北海道</option>
                         <option value="2">青森県</option>
@@ -47,6 +51,7 @@
             </div>
 
             <div class="form-group">
+                <!-- これはチェックボックスの見た目．CSSとかだとチェックボックス関係のデザインの変更は容易ではないが，bootstrapのクラスを用いることで簡単に変えることができる -->
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="subscribe">
                     <label class="custom-control-label" for="subscribe">購読する</label>

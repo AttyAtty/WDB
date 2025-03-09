@@ -6,36 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap Basics</title>
+    <!-- BootStrapを読み込んでいる．ダウンロードしてもいい． -->
+     <!-- 下のプログラムからわかるように，ｃｓｓを一つも書いてないのにスタイルを実装出来ていて便利 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
+    <!-- container-mdとかcontainer-fluidなどはウィンドウを拡大縮小したときの改行とか両隣の空白とかを調整する -->
     <div class="container-md">
+        <!-- displayは見出しの表示の仕方みたいな感じ．文字の大きさや太さとか -->
         <h1 class="display-1 text-center text-primary">Bootstrap Playground</h1>
         <h2 class="display-4">Buttons<span class="badge badge-success badge-pill">New</span></h2>
+        <!-- このクラスを指定しただけで，ボタンが作れる．btnはボタン．その後ろは色合いとか．lgとかsmはサイズ -->
         <button type="button" class="btn btn-primary">Primary</button>
         <button type="button" class="btn btn-success">Success</button>
         <button type="button" class="btn btn-info">Info</button>
         <button type="button" class="btn btn-outline-warning">Warning Outline</button>
+        <!-- ホバーしたら色が変わるボタン -->
         <button type="button" class="btn btn-outline-danger">Danger Outline</button>
         <button type="button" class="btn btn-outline-info btn-lg">Info Outline</button>
         <button type="button" class="btn btn-secondary btn-sm">Secondary</button>
         <button class="btn btn-success" disabled>Disabled Success</button>
+        <!-- バッジのクラス．メールボタン上に未読のメール数を表示したりするあれみたいな感じ -->
         <button class="btn btn-primary">Updates <span class="badge badge-light">9</span></button>
-
+        <!-- ボタンがグループ化される．連結する．roleを書くことでscreenreaderにグループ化していることを伝えることができる -->
         <h3>Button Group</h3>
         <div class="btn-group" role="group">
             <button class="btn btn-warning">One</button>
             <button class="btn btn-danger">Two</button>
             <button class="btn btn-warning">Three</button>
         </div>
+        <!-- alertでalertみたいにしている？あんま利点はわからない -->
+        <!-- alert-dismissibleはこのalertを消すことができる×のシンボルを加えるクラス．裏側でJavascriptが使われている -->
+        <!-- fade showはアラートの消え方のクラス．フェードアウトする -->
         <h3>Alert</h3>
+        <!-- roleはalertの役割を持っていることを示すもの．ダイジ． -->
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             <h4 class="alert-heading">警告！</h4>
             あなたには今のアクションが許可されてません！
+            <!--これが画面上から消すための×ボタン data-dismiss="alert"でアラートが消えるようにしている -->
             <button class="close" data-dismiss="alert" aria-label="Close">
+                <!-- aria-hiddenは別に見なくていいよということをscreenreaderに伝えている -->
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -49,11 +62,13 @@
             dignissimos id eius quidem praesentium ullam consequatur!</p>
 
         <blockquote class="blockquote text-right bg-light">
+            <!-- mb = mergin bottom.   bg-light: backgroundの色合いのこと -->
             <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis maiores, ipsum suscipit odio
                 neque
                 error cupiditate, quidem accusamus labore, eveniet quaerat fugit iusto quam quibusdam modi adipisci
                 dolore.
                 Consequatur, fugit!</p>
+            <!-- blockquote-footerで引用元みたいなデザインができる -->
             <footer class="blockquote-footer">Lorem Ipsum</footer>
         </blockquote>
     </div>
