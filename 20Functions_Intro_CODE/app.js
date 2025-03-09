@@ -15,6 +15,7 @@ function singSong() {
 function greet(firstName, lastName) {
     console.log(`Hi, ${firstName} ${lastName[0]}.`);
 }
+// 引数として何も渡さないとundefinedが渡される．
 
 // greet('Ken', 'Fukuyama');
 
