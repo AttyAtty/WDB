@@ -14,6 +14,7 @@ while(input !== 'quit' && input !== 'q') {
     } else if (input === 'delete') {
         const index = parseInt(prompt('削除するインデックスを入力してください'));
         if (!Number.isNaN(index)) {
+            // NaNは NaN === NaN とできないので，変な文字列が入力されたとき，このNumberオブジェクトのisNaNメソッドを使う．Number.isNaNでセット
             const deleted = todos.splice(index, 1);
             console.log(`「${deleted[0]}」を削除しました`);
         } else {

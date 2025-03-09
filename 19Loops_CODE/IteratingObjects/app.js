@@ -18,3 +18,5 @@ for (let student of Object.keys(testScores)) {
 // for (let student in testScores) {
 //   console.log(`${student}さんは${testScores[student]}`);
 // }
+
+// of Object.keys(testScores) == in testScores
