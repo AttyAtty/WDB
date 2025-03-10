@@ -1,3 +1,5 @@
+// 高階関数：関数を受け取ったり，関数を返す関数．引数として関数を受け取る．戻り値に関数をしていする．
+
 // function callTwice(func) {
 //     func();
 //     func();
@@ -16,6 +18,7 @@
 
 // callTwice(rollDie)
 
+// 関数から関数を呼んでいる
 function makeRandomFunc() {
     const rand = Math.random();
     if (rand > 0.5) {
