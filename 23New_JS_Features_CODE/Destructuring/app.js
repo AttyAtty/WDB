@@ -1,11 +1,16 @@
+// 配列の分割代入
+
 const scores = [929321, 899341, 888336, 772739, 543671, 243567, 111934];
 
 const highScore = scores[0];
 const secondScore = scores[1];
 
 const [gold, silver, bronze, ...rest] = scores;
+// 上のようにして配列のそれぞれの要素を変数に代入できる．
+// restの部分には残りの要素が配列として入っている
 
-
+// オブジェクトの分割代入．使う機会は多い
+// オブジェクトから必要な要素を変数に代入することができた．
 
 const user = {
     email: 'harvey@example.com',
@@ -31,17 +36,24 @@ const user2 = {
 // const firstName = user.firstName;
 // const lastName = user.lastName;
 // const email = user.email;
+
+// 上の３行とやってることは同じ．
 // const { firstName, lastName, email } = user;
 
+// オブジェクトのプロパティに対して新しい変数名の変数にも代入することができる．
+// diedのプロパティのようにもし指定したプロパティが右辺のオブジェクトになかった場合のためにデフォルト値を設定できる
 // const { born: birthYear, died: deathYear = 'N/A' } = user;
 
 // const {firstName, lastName, died = 'N/A'} = user2;
+
+// 関数パラメーターの分割代入
 
 // function fullName(user) {
 //     const { firstName, lastName } = user;
 //     return `${firstName} ${lastName}`;
 // }
 
+// 引数に渡す時点で以下のようにプロパティの指定が可能．中括弧はオブジェクトの意味．
 function fullName({ firstName, lastName }) {
     return `${firstName} ${lastName}`;
 }
@@ -97,6 +109,7 @@ const movies = [
 ]
 
 movies.filter(movie => movie.score >= 90);
+// 上と下のやつは同じ意味．どのオブジェクトのどのプロパティかの指定に必要な行が減る．
 movies.filter(({ score }) => score >= 90);
 
 movies.map(movie => {
@@ -107,3 +120,4 @@ movies.map(({title, year, score}) => {
     return `${title}(${year}): ${score}/100`;
 })
 
+// マジでよく見る書き方だから慣れるように
