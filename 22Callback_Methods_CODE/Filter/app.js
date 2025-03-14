@@ -1,5 +1,6 @@
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
+// filterメソッドは，その引数にある条件を満たす者のみを新しい関数の要素として加えていくのものである．まあ,filterっていうくらいだからね
 numbers.filter((num) => {
     return num < 10;
 })
@@ -57,6 +58,7 @@ const goodMovieTitles = movies
     .filter(movie => movie.score > 80)
     .map(movie => movie.title);
 
+//評価が高い映画をfilterで選抜して，mapでそのタイトルを順に表示している 
 
 
 const badMovies = movies.filter(movie => movie.score < 70);

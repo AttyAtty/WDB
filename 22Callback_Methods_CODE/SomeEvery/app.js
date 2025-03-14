@@ -1,3 +1,7 @@
+// someやeveryはboolean
+// some:一つでもテスト関数を満たす要素があればtrue
+// every:配列内の全ての要素が指定されたテスト関数を満たせばtrue.
+
 const exams = [80, 98, 92, 78, 77, 90, 89, 84, 81, 77]
 
 exams.every(exam => exam >= 75)
