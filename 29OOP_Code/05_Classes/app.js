@@ -1,10 +1,13 @@
 class Color {
+    // コンストラクタ関数．初期設定的な感じ
     constructor(r, g, b, name) {
         this.r = r;
         this.g = g;
         this.b = b;
         this.name = name;
     }
+
+    // 下の関数はColorのプロトタイプとして定義される．
     innerRGB() {
         const {r, g, b} = this;
         return `${r}, ${g}, ${b}`

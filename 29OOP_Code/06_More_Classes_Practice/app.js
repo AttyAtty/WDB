@@ -24,6 +24,8 @@ class Color {
 		const { h, l } = this;
 		return `hsl(${h}, 100%, ${l}%)`;
 	}
+
+	// hslとは，hue:16進数表した色,色相環．0℃で赤．角度で表す．，s:彩度，l:明度，を指している．
 	hsl() {
 		const { h, s, l } = this;
 		return `hsl(${h}, ${s}%, ${l}%)`;
@@ -31,6 +33,7 @@ class Color {
 	opposite() {
 		const { h, s, l } = this;
 		const newHue = (h + 180) % 360;
+		// heuに180°足すと補色になる．
 		return `hsl(${newHue}, ${s}%, ${l}%)`;
 	}
 	calcHSL() {
@@ -81,5 +84,7 @@ class Color {
 const red = new Color(255, 67, 89, 'tomato');
 const white = new Color(255, 255, 255, 'white');
 const orange = new Color(230, 126, 34, 'carrot');
+// クラスを使うときは上みたいにインスタンスを作っていく．クラスの中のメソッドは自由に使える．
 
 
+// "hsl(130, 100%, 40%)"
