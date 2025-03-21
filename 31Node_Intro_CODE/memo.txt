@@ -1,0 +1,24 @@
+ターミナルでNode.jsに入ると，ターミナルとかで使えたようなコマンドが使えない．
+ブラウザではできなかったことがNodeでは結構できる．
+何よりフロントエンドの言語であるJavaScriptと同じ構文を用いたNodeでバックエンドを実装できるのが大きい
+
+REPL：書く，評価する，出力する，ループする　の頭文字？
+
+そしてJavaScriptではグローバルとしてあったWindowがNode.jsでは異なった名前でつかわれていて，そのままGlobalという名となっている
+
+Ctrl＋C　を2かいか，Ctrl＋DでNodeを抜け出せる
+
+nodeを使いたいフォルダ毎に  "sudo apt install nodejs"  を実行してnodeをインストールする必要があると思う．
+
+もしくは，上のやつだとバージョンが古いから，Qiitaのページを参考にNOde20をインストール．
+
+後々はExpressというフレームワークを用いてバックを実装していく．
+
+
+ProcessオブジェクトはGlobalオブジェクトの中にあるもの．Nodejs自体に関する情報が入っている．
+
+process.version, process.release, process.cwd(), process.argvなどをよく使う？
+
+process.argvは，nodeへのパスと，その後ろに書いたファイルへの絶対パスが配列として返される．
+
+でのそんなに使う機会はない．
